@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/sunburst.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Workshop 4. Selection Rules</h1>
+    </header>
+
+    <div class="container">
+        <h1>Workshop 4</h1>
+        <p>Welcome to Workshop 3! In this session, we will explore how to control the flow of a JavaScript program 
+            using conditional statements. Specifically, we'll dive into if, else, and else if statements, as well 
+            as how to use logical operators to create complex conditions. Understanding these concepts will allow you 
+            to make your programs respond dynamically based on different conditions, which is essential for building 
+            interactive and functional applications.
+        </p> 
+
+        <div class="browser-section">
+            <h2>Understanding Conditional Statements</h2>
+            <p>Conditional statements allow your code to make decisions and execute specific blocks of code 
+                based on certain conditions. In JavaScript, the most basic form of a conditional statement is the 
+                if statement.
+            </p>
+
+            <div class="browser-section">
+                <h2>Comparison Operators</h2>
+                <p>Comparison operators are used to compare two values. They return a Boolean value (true or false) 
+                    based on the comparison.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operator</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>==</td>
+                                <td>Equal to (loose equality, type coercion allowed)</td>
+                                <td><code>5 == '5'</code></td>
+                                <td><code>true</code></td>
+                            </tr>
+                            <tr>
+                                <td>===</td>
+                                <td>Strict equal to (no type coercion)</td>
+                                <td><code>5 === '5'</code></td>
+                                <td><code>false</code></td>
+                            </tr>
+                            <tr>
+                                <td>!=</td>
+                                <td>Not equal to (loose inequality, type coercion allowed)</td>
+                                <td><code>5 != '5'</code></td>
+                                <td><code>false</code></td>
+                            </tr>
+                            <tr>
+                                <td>!==</td>
+                                <td>Strict not equal to (no type coercion)</td>
+                                <td><code>5 !== '5'</code></td>
+                                <td><code>true</code></td>
+                            </tr>
+                            <tr>
+                                <td>&gt;</td>
+                                <td>Greater than</td>
+                                <td><code>10 &gt; 5</code></td>
+                                <td><code>true</code></td>
+                            </tr>
+                            <tr>
+                                <td>&gt;=</td>
+                                <td>Greater than or equal to</td>
+                                <td><code>10 &gt;= 10</code></td>
+                                <td><code>true</code></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;</td>
+                                <td>Less than</td>
+                                <td><code>5 &lt; 10</code></td>
+                                <td><code>true</code></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;=</td>
+                                <td>Less than or equal to</td>
+                                <td><code>5 &lt;= 5</code></td>
+                                <td><code>true</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>            
+
+
+        <div class="browser-section">
+            <h2>The if Statement</h2>
+            <p>The if statement executes a block of code if a specified condition evaluates to true.
+            </p>
+            <pre><code class="language-javascript">
+if (condition) {
+    // Code to run if the condition is true
+}                 
+            </code></pre>
+            <p>
+            Example:
+            </p>
+            <pre><code class="language-javascript">
+let age = 16;
+
+if (age >= 16) {
+    console.log("You are eligible to vote.");
+}                             
+            </code></pre> 
+            <p>In this example, the message "You are eligible to vote." will be printed to the console because the condition age >= 16 is true.</p>
+        </div>
+            
+        <div class="browser-section">
+            <h2>Adding Alternatives with else</h2>
+            <p>The else statement allows you to specify an alternative block of code that runs if the 
+                condition in the if statement is false.
+            <pre><code class="language-javascript">
+if (condition1) {
+    // Code to run if condition1 is true
+} else if (condition2) {
+    // Code to run if condition1 is false and condition2 is true
+} else {
+    // Code to run if both condition1 and condition2 are false
+}         
+            </code></pre>
+            <p>
+                Example:
+            </p>
+            <pre><code class="language-javascript">
+let temperature = 75;
+
+if (temperature > 90) {
+    console.log("It's too hot!");
+} else if (temperature > 60) {
+    console.log("The weather is nice.");
+} else {
+    console.log("It's too cold!");
+}               
+            </code></pre> 
+            <p>In this example, the message "The weather is nice." will be printed because the temperature 
+               is greater than 60 but not greater than 90.</p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Handling Multiple Conditions with else if</h2>
+            <p>Sometimes, you may need to check multiple conditions. 
+               The else if statement allows you to specify a new condition to test if the previous 
+               condition(s) were false.
+            </p>
+            <pre><code class="language-javascript">
+if (condition1) {
+    // Code to run if condition1 is true
+} else if (condition2) {
+    // Code to run if condition1 is false and condition2 is true
+} else {
+    // Code to run if both condition1 and condition2 are false
+}                
+            </code></pre>
+            <p>
+                Example:
+            </p>
+            <pre><code class="language-javascript">
+let score = 85;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: F");
+}
+            </code></pre> 
+            <p>In this example, the message "Grade: B" will be printed because the score falls between 80 and 89.</p>
+        </div>
+
+
+
+        <div class="browser-section">
+            <h2>Using Logical Operators</h2>
+            <p>Logical operators allow you to combine multiple conditions in a single if, else if, or else statement. 
+                The most common logical operators are:<br>
+                AND (&&): Returns true if both conditions are true.<br>
+                OR (||): Returns true if at least one condition is true.<br>
+                NOT (!): Inverts the truthiness of a condition.<br>
+            <p class="highlight">
+                AND Operator Example
+            </p>
+            <pre><code class="language-javascript">
+let age = 25;
+let hasLicense = true;
+
+if (age >= 18 && hasLicense) {
+    console.log("You can drive.");
+} else {
+    console.log("You cannot drive.");
+}                 
+            </code></pre>
+            <p>In this example, the message "You can drive." will be printed because both conditions are true.
+            </p>
+            <p class="highlight">
+                OR Operator Example
+            </p>
+            <pre><code class="language-javascript">
+let isWeekend = true;
+let isHoliday = false;
+
+if (isWeekend || isHoliday) {
+    console.log("You can relax today.");
+} else {
+    console.log("It's a workday.");
+}                      
+            </code></pre>
+            <p>Here, the message "You can relax today." will be printed because isWeekend is true, 
+               even though isHoliday is false.
+            </p>    
+            <p class="highlight">
+                OR Operator Example
+            </p>
+            <pre><code class="language-javascript">
+let isRaining = false;
+
+if (!isRaining) {
+    console.log("You can go for a walk.");
+} else {
+    console.log("Better stay inside.");
+}       
+            </code></pre>
+            <p>The message "You can go for a walk." will be printed because !isRaining evaluates to true.
+            </p>         
+        </div>
+        
+        <div class="browser-section">
+            <h2>Exercises</h2>
+            <ul id="taskList">
+                <li><input type="checkbox" id="task1"><label for="task1"> Task 1: Basic Conditional Statement</br>Write a script that checks whether a number is positive, negative, or zero and prints an appropriate message.</label></li>
+                <li><input type="checkbox" id="task2"><label for="task2"> Task 2: Grade Calculator<br>Create a script that takes a student's score and prints their grade according to the following scale:<br>70 and above: A<br>70-79: B<br>60-69: C<br>Below 60: F</label></li>
+                <li><input type="checkbox" id="task3"><label for="task3"> Task 3: Logical Operator Practice<br>Write a script that checks if a user is eligible for a discount. The user is eligible if they are a student or a senior (age 65 or above). If they meet neither condition, print a message saying they are not eligible.</label></li>
+                <li><input type="checkbox" id="task4"><label for="task4"> Task 4: Nested Conditionals<br>Write a script that checks the weather and time of day to give different suggestions:</br>
+                    If it's sunny and morning, suggest going for a jog.<br>
+                    If it's rainy and evening, suggest staying in and reading a book.<br>
+                    Otherwise, suggest doing something productive indoors.<br></label></li>
+              </ul>
+        </div>        
+
+
+        <div class="browser-section">
+            <h2>Q&A and Troubleshooting</h2>
+            <ul id="taskList">
+                <li>✅ Make sure you don't confuse assignment operator = with comparison operator ==. </li>
+                <li>✅ If your if statement does not work, check your semi-colons. if(condition) does not use semi-colons.</li>
+                <li>🦆 Logical Operators can be tricky, and frustrating if they don't do what you want. Read them aloud and you will hear the issue.</li>
+            </ul>
+            <p class="highlight">Remember the Whiteboard is available for you to ask questions anonymously.</p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Further Learning</h2>
+            <ul id="taskList">
+                <li>📖 <a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank">W3Schools if, else, and else if</li>
+                <li>👀 <a href="https://www.youtube.com/watch?v=9Ykz2_PhdfE" target="_blank">YouTube: Dave Gray - Conditionals</a></li>
+                <li>💻 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">Official Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; J. Wilson. Dundee and Angus College.</p>
+    </footer>
+    <script src="script.js">
+    </script>
+</body>
+</html>
